@@ -327,6 +327,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [Haythem Bekir](https://github.com/haythembekir20)
 - Built with [Spatie Laravel Package Tools](https://github.com/spatie/laravel-package-tools)
 
+## Support
+
+If you find this package helpful, please consider starring it on [GitHub](https://github.com/maisonduweb-agency/laravel-log-metrics)!
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
