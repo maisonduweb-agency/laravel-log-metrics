@@ -1,0 +1,59 @@
+{
+    "name": "haythem-bekir/laravel-log-metrics",
+    "description": "Laravel package for sending comprehensive log metrics and statistics reports to Discord webhooks with daily summaries and insights",
+    "keywords": ["laravel", "discord", "logging", "metrics", "statistics", "monitoring", "webhook"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Haythem Bekir",
+            "email": "your-email@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "spatie/laravel-package-tools": "^1.11"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0|^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HaythemBekir\\LogMetrics\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HaythemBekir\\LogMetrics\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HaythemBekir\\LogMetrics\\Providers\\LogMetricsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test-coverage": "pest --coverage",
+        "analyse": "phpstan analyse",
+        "format": "pint",
+        "format-check": "pint --test"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,95 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Discord Logger Configuration
+    |--------------------------------------------------------------------------
+    |
+    | This file contains the configuration for Discord daily log reports.
+    | Send comprehensive daily statistics to your Discord channel.
+    |
+    */
+
+    /*
+    |--------------------------------------------------------------------------
+    | Daily Report
+    |--------------------------------------------------------------------------
+    |
+    | Send daily log statistics report at a scheduled time.
+    | Requires scheduler to be running: * * * * * php artisan schedule:run
+    |
+    */
+
+    'daily_report' => [
+        'enabled' => env('LOG_METRICS_DAILY_REPORT_ENABLED', false),
+        'webhook_url' => env('LOG_METRICS_DAILY_REPORT_WEBHOOK_URL'),
+
+        // Time to send the report (24h format)
+        'time' => env('LOG_METRICS_DAILY_REPORT_TIME', '08:00'),
+        'timezone' => env('LOG_METRICS_DAILY_REPORT_TIMEZONE', 'UTC'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Message Appearance
+    |--------------------------------------------------------------------------
+    |
+    | Customize the appearance of Discord messages.
+    |
+    */
+
+    'appearance' => [
+        'username' => env('LOG_METRICS_BOT_USERNAME', 'Laravel Logger'),
+        'avatar_url' => env('LOG_METRICS_BOT_AVATAR_URL'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Embed Colors by Level
+    |--------------------------------------------------------------------------
+    |
+    | Discord embed colors for each log level (in decimal format).
+    |
+    */
+
+    'colors' => [
+        'emergency' => 0xFF0000, // Red
+        'alert'     => 0xFF3300, // Orange-Red
+        'critical'  => 0xFF6600, // Orange
+        'error'     => 0xFF9900, // Dark Orange
+        'warning'   => 0xFFCC00, // Yellow
+        'notice'    => 0x00CCFF, // Cyan
+        'info'      => 0x0099FF, // Blue
+        'debug'     => 0x999999, // Gray
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Environment Label
+    |--------------------------------------------------------------------------
+    |
+    | Label to identify which environment the logs are coming from.
+    |
+    */
+
+    'environment_label' => env('LOG_METRICS_ENVIRONMENT_LABEL', env('APP_ENV', 'production')),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Log Viewer Integration
+    |--------------------------------------------------------------------------
+    |
+    | If you have a Laravel Log Viewer package installed (opcodesio/log-viewer
+    | or rap2hpoutre/laravel-log-viewer), error messages in Discord reports
+    | will include clickable links to view the full error details.
+    |
+    */
+
+    'log_viewer' => [
+        'enabled' => env('LOG_METRICS_LOG_VIEWER_ENABLED', true),
+        'app_url' => env('LOG_METRICS_APP_URL', env('APP_URL')),
+    ],
+
+];
