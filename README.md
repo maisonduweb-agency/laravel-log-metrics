@@ -31,7 +31,7 @@ Instead of alert fatigue from real-time notifications, this package provides:
 
 ## Requirements
 
-- PHP 8.1+
+- PHP 8.1 or higher
 - Laravel 10.x, 11.x, or 12.x
 
 ## Installation
