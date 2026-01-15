@@ -36,7 +36,7 @@ Instead of alert fatigue from real-time notifications, this package provides:
 
 ## Installation
 
-Install via Composer:
+You can install the package via Composer:
 
 ```bash
 composer require haythem-bekir/laravel-log-metrics
